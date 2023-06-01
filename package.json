@@ -1,5 +1,6 @@
 {
   "homepage": "http://BlancaNietoPetinal.github.io/my-first-web",
+  "proxy": "http://localhost:3000",
   "name": "my-first-web",
   "version": "0.1.0",
   "private": true,
