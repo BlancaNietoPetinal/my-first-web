@@ -8,10 +8,10 @@ import DataBase from './pages/DataBase.js'
 
 
 function App() {
-  const [sentence, setSentence] = useState('');
-  useEffect( () => {
-    fetch('/api').then( response => setSentence(response) )
-  }, [])
+  // const [sentence, setSentence] = useState('');
+  // useEffect( () => {
+  //   fetch('/').then( response => setSentence(response) )
+  // }, [])
 
   switch(window.location.pathname) {
     case '/':
