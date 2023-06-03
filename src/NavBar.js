@@ -5,19 +5,25 @@ export default function NavBar () {
                 href = "/" className = "site-title">Site name
             </a>
             <ul>
-                    <CustomEntry href = "/plan">Plan nutricional</CustomEntry>
-                    <CustomEntry href = "/antropometry">Antropometría</CustomEntry>
-                    <CustomEntry href = "/database">Base de Alimentos</CustomEntry>
+                <li>
+                    <a href = "/plan">Plan nutricional</a>
+                </li>
+                <li>
+                    <a href = "/antropometry">Antropometría</a>
+                </li>
+                <li>
+                    <a href = "/database">Base de Alimentos</a>
+                </li>
             </ul>
         </nav>
     );
 }
 
-function CustomEntry({href, children, ...props}){
-    const path = window.location.pathname;
-    return (
-        <li className={(path === href) ? "active" : ""}>
-            <a href = {href} {...props}>{children}</a>
-        </li>
-    );
-}
+// function CustomEntry({href, children, ...props}){
+//     const path = window.location.pathname;
+//     return (
+//         <li className={(path === href) ? "active" : ""}>
+//             <a href = {href} {...props}>{children}</a>
+//         </li>
+//     );
+// }

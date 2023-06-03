@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import NavBar from './NavBar.js'
 import Home from './pages/Home.js'
 import Plan from './pages/Plan.js'
@@ -8,6 +8,7 @@ import DataBase from './pages/DataBase.js'
 
 
 function App() {
+  let component
   // const [sentence, setSentence] = useState('');
   // useEffect( () => {
   //   fetch('/').then( response => setSentence(response) )
@@ -15,23 +16,23 @@ function App() {
 
   switch(window.location.pathname) {
     case '/':
-      Component = Home
+      component = <Home/>
       break;
     case '/plan':
-      Component = Plan
+      component = <Plan/>
       break;
     case '/antropometry':
-      Component = Antropometry
+      component = <Antropometry/>
       break;
     case '/database':
-      Component = DataBase
+      component = <DataBase/>
       break;
-      }
+  }
   return (
     <>
       < NavBar />
       <div className='container'>
-      < Component />
+      {component}
       </div>
     </>
   );
