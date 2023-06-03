@@ -9,6 +9,7 @@ export default function NavBar () {
                 <CustomEntry to = "/plan">Plan nutricional</CustomEntry>
                 <CustomEntry to = "/antropometry">Antropometría</CustomEntry>
                 <CustomEntry to = "/database">Base de Alimentos</CustomEntry>
+                <CustomEntry to = "/login">Log In!</CustomEntry>
             </ul>
         </nav>
     );
