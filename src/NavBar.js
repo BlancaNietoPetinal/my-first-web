@@ -1,29 +1,25 @@
+import { Link, useMatch, useResolvedPath } from "react-router-dom"; // replaces anchor tags
+
 export default function NavBar () {
     return (
         <nav className="nav">
-            <a 
-                href = "/" className = "site-title">Site name
-            </a>
+            <Link to = "/" className = "site-title">Site name
+            </Link>
             <ul>
-                <li>
-                    <a href = "/plan">Plan nutricional</a>
-                </li>
-                <li>
-                    <a href = "/antropometry">Antropometría</a>
-                </li>
-                <li>
-                    <a href = "/database">Base de Alimentos</a>
-                </li>
+                <CustomEntry to = "/plan">Plan nutricional</CustomEntry>
+                <CustomEntry to = "/antropometry">Antropometría</CustomEntry>
+                <CustomEntry to = "/database">Base de Alimentos</CustomEntry>
             </ul>
         </nav>
     );
 }
 
-// function CustomEntry({href, children, ...props}){
-//     const path = window.location.pathname;
-//     return (
-//         <li className={(path === href) ? "active" : ""}>
-//             <a href = {href} {...props}>{children}</a>
-//         </li>
-//     );
-// }
+function CustomEntry({to, children, ...props}){
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch({path: resolvedPath.pathname, end: true})
+    return (
+        <li className={isActive ? "active" : ""}>
+            <Link to = {to} {...props}>{children}</Link>
+        </li>
+    );
+}

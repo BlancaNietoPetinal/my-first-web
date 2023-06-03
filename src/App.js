@@ -4,35 +4,21 @@ import Home from './pages/Home.js'
 import Plan from './pages/Plan.js'
 import Antropometry from './pages/Antropometry.js'
 import DataBase from './pages/DataBase.js'
+import {Route, Routes} from "react-router-dom"
 
 
 
 function App() {
-  let component
-  // const [sentence, setSentence] = useState('');
-  // useEffect( () => {
-  //   fetch('/').then( response => setSentence(response) )
-  // }, [])
-
-  switch(window.location.pathname) {
-    case '/':
-      component = <Home/>
-      break;
-    case '/plan':
-      component = <Plan/>
-      break;
-    case '/antropometry':
-      component = <Antropometry/>
-      break;
-    case '/database':
-      component = <DataBase/>
-      break;
-  }
   return (
     <>
       < NavBar />
       <div className='container'>
-      {component}
+        <Routes>
+          <Route path ="/" element={<Home/>}/>
+          <Route path ="/plan" element={<Plan/>}/>
+          <Route path ="/antropometry" element={<Antropometry/>}/>
+          <Route path ="/database" element={<DataBase/>}/>
+        </Routes>
       </div>
     </>
   );
