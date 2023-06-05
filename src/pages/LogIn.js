@@ -9,7 +9,10 @@ export default function LogIn ({ props }) {
     function handleSumbit (e) {
         e.preventDefault()
         console.log(email)
+
     }
+
+
 
     return (
         <>
