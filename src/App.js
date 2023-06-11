@@ -6,6 +6,7 @@ import Antropometry from './pages/Antropometry.js'
 import DataBase from './pages/DataBase.js'
 import LogIn from './pages/LogIn.js'
 import SignUp from './pages/SignUp.js'
+import Logged from './pages/Logged.js'
 import {Route, Routes} from "react-router-dom"
 
 
@@ -22,6 +23,8 @@ function App() {
           <Route path ="/database" element={<DataBase/>}/>
           <Route path ="/login" element={<LogIn/>}/>
           <Route path ="/signup" element={<SignUp/>}/>
+          <Route path ="/logged" element={<Logged/>}/>
+
         </Routes>
       </div>
     </>
